@@ -26,6 +26,12 @@ const sendAllGames = async (req, res) => {
     updated: req.game
   });
 }
+const sendUpdatedGames = (req, res) => {
+  res.send({
+    games: req.games,
+    updated: req.updatedObject
+  });
+};
 const addGameController = async (req, res) => {
 
     // Проверяем, есть ли уже в списке игра с таким же названием
@@ -65,5 +71,6 @@ const addGameController = async (req, res) => {
 module.exports={
     sendAllGames,
     deleteGame,
-    addGameController 
+    addGameController,
+    sendUpdatedGames
 }
